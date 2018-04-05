@@ -4,3 +4,9 @@ services:
     build: .
     ports:
       - "5000:5000"
+    volumes:
+      - ./:/opt/myapp
+    depends_on:
+      - redis
+  redis:
+    image: "redis:alpine"
